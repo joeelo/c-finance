@@ -14,6 +14,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json", "./tsconfig.node.json"],
+    // @ts-ignore
     tsconfigRootDir: __dirname,
   },
   plugins: ["react-refresh"],
@@ -22,6 +23,12 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*"]
+      }
+    ]
   },
   settings: {
     react: {

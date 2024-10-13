@@ -1,7 +1,8 @@
-import "./App.css";
+import QuestionHome from "src/pages/QuestionHome"
+import "./App.css"
 
 function App() {
-  return <div>Hello world!</div>;
+  return <QuestionHome />
 }
 
-export default App;
+export default App
