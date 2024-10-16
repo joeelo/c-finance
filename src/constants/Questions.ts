@@ -15,4 +15,5 @@ export enum Questions {
   DebtRepaymentStrategy = 'debt_repayment_strategy',
   InvestmentRiskTolerance = 'investment_risk_tolerance',
   InvestmentGrowthRate = 'investment_growth_rate',
+  Finish = 'finish',
 }

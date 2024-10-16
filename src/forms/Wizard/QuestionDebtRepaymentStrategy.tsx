@@ -51,7 +51,7 @@ export default function QuestionDebtRepaymentStrategy() {
           <Button
             onClick={() => {
               setInfo({ ...info, debtStrategy })
-              setStep(Questions.DebtOutstanding)
+              setStep(Questions.InvestmentRiskTolerance)
             }}
           >
             CONTINUE

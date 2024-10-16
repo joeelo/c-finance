@@ -44,7 +44,11 @@ export default function QuestionHasDebt() {
           <Button
             onClick={() => {
               setInfo({ ...info, hasDebt })
-              setStep(Questions.DebtOutstanding)
+              if (!hasDebt) {
+                setStep(Questions.InvestmentRiskTolerance)
+              } else {
+                setStep(Questions.DebtOutstanding)
+              }
             }}
           >
             CONTINUE

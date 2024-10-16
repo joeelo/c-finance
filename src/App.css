@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-#path2853, .palm-tree, #book-top, #money-bag, #bottom-window, #side-window, #side-window2 {
+#path2853, .palm-tree, #book-top, #money-bag, #bottom-window, #side-window, #side-window2, #down-arrow, #up-arrow, #equal {
   transition: 0.25s ease all;
 }
 

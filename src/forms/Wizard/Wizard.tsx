@@ -15,6 +15,8 @@ import QuestionHasDebt from './QuestionHasDebt'
 import QuestionDebtOustanding from './QuestionDebtOutstanding'
 import QuestionDebtHighInterest from './QuestionDebtHighInterest'
 import QuestionDebtRepaymentStrategy from './QuestionDebtRepaymentStrategy'
+import QuestionInvestmentRiskTolerance from './QuestionInvestmentRiskTolerance'
+import QuestionInvestmentGrowthRate from './QuestionInvestmentGrowthRate'
 
 export default function Wizard() {
   const [step, setStep] = useState(Questions.AnnualIncome)
@@ -50,6 +52,12 @@ export default function Wizard() {
       {step === Questions.DebtHighInterest && <QuestionDebtHighInterest />}
       {step === Questions.DebtRepaymentStrategy && (
         <QuestionDebtRepaymentStrategy />
+      )}
+      {step === Questions.InvestmentRiskTolerance && (
+        <QuestionInvestmentRiskTolerance />
+      )}
+      {step === Questions.InvestmentGrowthRate && (
+        <QuestionInvestmentGrowthRate />
       )}
     </WizardContext.Provider>
   )
