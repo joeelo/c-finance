@@ -13,3 +13,4 @@ This project it a skeleton of **React** and **Vite** (and **Typescript**)! It wa
 ## Types folder
 
 The **tsconfig.json** is already set up to handle types from a `@types` folder inside the `src` directory.
+# c-finance
