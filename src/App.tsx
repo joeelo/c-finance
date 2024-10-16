@@ -1,8 +1,19 @@
-import QuestionHome from "src/pages/QuestionHome"
-import "./App.css"
+import './App.css'
+import Wizard from 'src/forms/Wizard/Wizard'
+import Box from '@mui/material/Box'
 
-function App() {
-  return <QuestionHome />
+export default function App() {
+  return (
+    <Box display="flex" justifyContent="center">
+      <Box
+        maxWidth={800}
+        display="flex"
+        justifyContent="center"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Wizard />
+      </Box>
+    </Box>
+  )
 }
-
-export default App
