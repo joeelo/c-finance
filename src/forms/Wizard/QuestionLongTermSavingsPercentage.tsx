@@ -12,16 +12,16 @@ import QuestionHeader from 'src/components/QuestionHeader'
 import InputAdornment from '@mui/material/InputAdornment'
 import { Questions } from 'src/constants/Questions'
 
-export default function QuestionAnnualIncome() {
+export default function QuestionLongTermSavingsPercentage() {
   const schema = object({
-    annualIncome: number()
+    longTermSavingsPercentage: number()
       .typeError('Must be a number')
       .min(0)
-      .max(1000000, "You know you don't make that much yet!")
+      .max(100, "Percentages don't work like that here!")
       .required('You have to put something!'),
   })
 
-  const { setInfo, setStep } = useContext(WizardContext)
+  const { info, setInfo, setStep } = useContext(WizardContext)
 
   const {
     control,
@@ -32,13 +32,16 @@ export default function QuestionAnnualIncome() {
   })
 
   const onSubmit = async (data: any) => {
-    setInfo({ annualIncome: data.annualIncome })
-    setStep(Questions.MonthlyExpenses)
+    setInfo({
+      ...info,
+      longTermSavingsPercentage: data.longTermSavingsPercentage,
+    })
+    setStep(Questions.HasDebt)
   }
 
   return (
     <>
-      <QuestionHeader title="What is your current salary?" />
+      <QuestionHeader title="What percentage of your monthly take home pay would you like to put towards your goal?" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box display="flex" flexDirection="column" alignItems="center">
           <Controller
@@ -46,14 +49,14 @@ export default function QuestionAnnualIncome() {
               return (
                 <NumberInput
                   {...field}
-                  label="Annual Income"
-                  name="annualIncome"
-                  error={!!formState.errors.annualIncome}
+                  label="Take home percentage"
+                  name="longTermSavingsPercentage"
+                  error={!!formState.errors.longTermSavingsPercentage}
                   slotProps={{
                     input: {
                       startAdornment: (
                         <InputAdornment position="start">
-                          <Typography color="green">$</Typography>
+                          <Typography color="green">%</Typography>
                         </InputAdornment>
                       ),
                     },
@@ -62,7 +65,7 @@ export default function QuestionAnnualIncome() {
               )
             }}
             defaultValue={'' as any} // Type conversion for formik, keep number validation but pass string instead of 0 as default value
-            name="annualIncome"
+            name="longTermSavingsPercentage"
             control={control}
           />
 
@@ -70,9 +73,9 @@ export default function QuestionAnnualIncome() {
             <Button type="submit">Next</Button>
           </Box>
 
-          {errors.annualIncome && (
+          {errors.longTermSavingsPercentage && (
             <ErrorAlert sx={{ mt: 3 }}>
-              {errors.annualIncome.message}
+              {errors.longTermSavingsPercentage.message}
             </ErrorAlert>
           )}
         </Box>

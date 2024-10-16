@@ -10,6 +10,11 @@ import QuestionShortTermSavingsTimePeriod from './QuestionShortTermSavingsTimePe
 import QuestionShortTermSavingsHasGoals from './QuestionShortTermSavingsHasGoal'
 import QuestionLongTermSavingsGoals from './QuestionsLongTermSavingsGoals'
 import QuestionShortTermSavingsGoalAmount from './QuestionShortTermSavingsGoalAmount'
+import QuestionLongTermSavingsPercentage from './QuestionLongTermSavingsPercentage'
+import QuestionHasDebt from './QuestionHasDebt'
+import QuestionDebtOustanding from './QuestionDebtOutstanding'
+import QuestionDebtHighInterest from './QuestionDebtHighInterest'
+import QuestionDebtRepaymentStrategy from './QuestionDebtRepaymentStrategy'
 
 export default function Wizard() {
   const [step, setStep] = useState(Questions.AnnualIncome)
@@ -36,6 +41,15 @@ export default function Wizard() {
       )}
       {step === Questions.LongTermSavingsGoals && (
         <QuestionLongTermSavingsGoals />
+      )}
+      {step === Questions.LongTermSavingsPercentage && (
+        <QuestionLongTermSavingsPercentage />
+      )}
+      {step === Questions.HasDebt && <QuestionHasDebt />}
+      {step === Questions.DebtOutstanding && <QuestionDebtOustanding />}
+      {step === Questions.DebtHighInterest && <QuestionDebtHighInterest />}
+      {step === Questions.DebtRepaymentStrategy && (
+        <QuestionDebtRepaymentStrategy />
       )}
     </WizardContext.Provider>
   )

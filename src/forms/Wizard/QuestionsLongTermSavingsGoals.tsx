@@ -99,7 +99,7 @@ export default function QuestionLongTermSavingsGoals() {
         <Button
           onClick={() => {
             setInfo({ ...info, longTermSavingsGoal: goal })
-            setStep(Questions.ShortTermSavingsTimePeriod)
+            setStep(Questions.LongTermSavingsPercentage)
           }}
         >
           CONTINUE

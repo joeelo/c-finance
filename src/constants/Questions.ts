@@ -7,7 +7,12 @@ export enum Questions {
   ShortTermSavingsTimePeriod = 'short_term_savings_time_period',
   ShortTermSavingsAmount = 'short_term_savings_amount',
   LongTermSavingsGoals = 'long_term_savings_goals',
+  LongTermSavingsPercentage = 'long_term_savings_percentage',
   PercentageSavedMonthly = 'percentage_saved_monthly',
+  HasDebt = 'has_debt',
+  DebtOutstanding = 'debt_oustanding',
+  DebtHighInterest = 'debt_high_interest',
+  DebtRepaymentStrategy = 'debt_repayment_strategy',
   InvestmentRiskTolerance = 'investment_risk_tolerance',
   InvestmentGrowthRate = 'investment_growth_rate',
 }
