@@ -36,7 +36,7 @@ export default function QuestionInvestmentGrowthRate() {
       ...info,
       investmentGrowthRate: data.investmentGrowthRate,
     })
-    setStep(Questions.HasDebt)
+    setStep(Questions.Finish)
   }
 
   return (

@@ -17,12 +17,11 @@ import QuestionDebtHighInterest from './QuestionDebtHighInterest'
 import QuestionDebtRepaymentStrategy from './QuestionDebtRepaymentStrategy'
 import QuestionInvestmentRiskTolerance from './QuestionInvestmentRiskTolerance'
 import QuestionInvestmentGrowthRate from './QuestionInvestmentGrowthRate'
+import TypingAnimation from 'src/components/TypingAnimation'
 
 export default function Wizard() {
   const [step, setStep] = useState(Questions.AnnualIncome)
   const [info, setInfo] = useState({})
-
-  console.log(info)
 
   return (
     <WizardContext.Provider value={{ info, setInfo, step, setStep }}>
@@ -58,6 +57,9 @@ export default function Wizard() {
       )}
       {step === Questions.InvestmentGrowthRate && (
         <QuestionInvestmentGrowthRate />
+      )}
+      {step === Questions.Finish && (
+        <TypingAnimation string="dude, it's been a blast chilling, thanks so much for letting us hang and I'm glad we both got to check our teams play - well one of us did for one game =,,(. But I'm stoked for this and the toffee, sign me up fam." />
       )}
     </WizardContext.Provider>
   )
