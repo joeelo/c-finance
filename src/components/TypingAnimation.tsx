@@ -4,7 +4,7 @@
 import Typography from '@mui/material/Typography'
 import { useState, useEffect } from 'react'
 
-export default function TypingAnimation({ string = '', speed = 100 }) {
+export default function TypingAnimation({ string = '', speed = 50 }) {
   const [shownString, setShownString] = useState('')
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function TypingAnimation({ string = '', speed = 100 }) {
   }, [])
 
   return (
-    <Typography id="cursor" variant="h3">
+    <Typography id="cursor" variant="h5">
       {shownString}
     </Typography>
   )

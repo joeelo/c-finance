@@ -6,6 +6,7 @@ export default function App() {
   return (
     <Box display="flex" justifyContent="center">
       <Box
+        width="90%"
         maxWidth={800}
         display="flex"
         justifyContent="center"
