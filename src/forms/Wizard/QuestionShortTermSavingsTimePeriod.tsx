@@ -5,6 +5,7 @@ import QuestionHeader from 'src/components/QuestionHeader'
 import { WizardContext } from './WizardContext'
 import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 enum SavingsGoals {
   ThreeMonths = '3_months',
@@ -22,12 +23,11 @@ export default function QuestionShortTermSavingsTimePeriod() {
   return (
     <>
       <QuestionHeader title="When do you want to accomplish your short term goal?" />
-      <Box display="flex">
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setSavingsGoal(SavingsGoals.ThreeMonths)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={savingsGoals === SavingsGoals.ThreeMonths}
-          boxProps={{ mr: 5 }}
         >
           <h3>3-6 Months</h3>
         </BoxWithShadow>
@@ -36,7 +36,6 @@ export default function QuestionShortTermSavingsTimePeriod() {
           isSelected={savingsGoals === SavingsGoals.Year}
           onClick={() => setSavingsGoal(SavingsGoals.Year)}
           boxStyle={{ cursor: 'pointer' }}
-          boxProps={{ mr: 5 }}
         >
           <h3>Closer to a year</h3>
         </BoxWithShadow>
@@ -48,7 +47,7 @@ export default function QuestionShortTermSavingsTimePeriod() {
         >
           <h3>I'm not sure</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       <Box mt={5}>
         <Button

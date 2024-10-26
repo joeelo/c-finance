@@ -5,6 +5,7 @@ import QuestionHeader from 'src/components/QuestionHeader'
 import { WizardContext } from './WizardContext'
 import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 enum RepaymentStrategies {
   Aggressive = 'aggressive',
@@ -27,12 +28,11 @@ export default function QuestionDebtRepaymentStrategy() {
         title="What type of debt strategy are you going for?"
         subtitle="Are you focused on paying down debt aggressively or balancing debt repayment with saving/investing?"
       />
-      <Box display="flex">
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setDebtStrategy(RepaymentStrategies.Aggressive)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={isAggressive}
-          boxProps={{ mr: 5 }}
         >
           <h3>Aggressive</h3>
         </BoxWithShadow>
@@ -44,7 +44,7 @@ export default function QuestionDebtRepaymentStrategy() {
         >
           <h3>Balanced</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       {debtStrategy !== null && (
         <Box mt={5}>

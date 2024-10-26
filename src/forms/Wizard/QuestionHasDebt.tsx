@@ -5,6 +5,7 @@ import QuestionHeader from 'src/components/QuestionHeader'
 import { WizardContext } from './WizardContext'
 import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 export default function QuestionHasDebt() {
   const [hasDebt, setHasDebt] = useState<boolean | null>(null)
@@ -20,12 +21,11 @@ export default function QuestionHasDebt() {
         title="Do you have any outstanding debt?"
         subtitle="This includes credit cards, student loans, payment plans etc."
       />
-      <Box display="flex">
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setHasDebt(true)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={isYesSelected}
-          boxProps={{ mr: 5 }}
         >
           <h3>Yes</h3>
         </BoxWithShadow>
@@ -37,7 +37,7 @@ export default function QuestionHasDebt() {
         >
           <h3>Debt free</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       {hasDebt !== null && (
         <Box mt={5}>

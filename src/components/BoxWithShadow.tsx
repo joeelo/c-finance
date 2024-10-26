@@ -1,5 +1,6 @@
 import Box, { BoxProps } from '@mui/material/Box'
 import { CSSProperties, ReactNode } from 'react'
+import useIsMobile from 'src/hooks/useIsMobile'
 
 interface BoxWithShadowProps {
   children: ReactNode
@@ -16,6 +17,8 @@ export default function BoxWithShadow({
   isSelected,
   ...props
 }: BoxWithShadowProps) {
+  const isMobile = useIsMobile()
+
   return (
     <Box
       display="flex"
@@ -23,9 +26,10 @@ export default function BoxWithShadow({
       alignItems="center"
       p={5}
       border={'1px solid rgba(0,0,0,0.1)'}
-      minWidth={150}
       minHeight={100}
+      mb={isMobile ? 5 : 0}
       borderRadius={4}
+      mr={!isMobile ? 5 : 0}
       style={{
         boxShadow: 'rgba(0, 0, 0, 0.07) 0px 22px 30px -8px',
         ...boxStyle,

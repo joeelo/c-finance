@@ -7,6 +7,7 @@ import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
 import InfoAlert from 'src/components/InfoAlert'
 import Typography from '@mui/material/Typography'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 export default function QuestionShortTermSavingsHasGoals() {
   const [hasSavingsGoals, setHasSavingsGoals] = useState<boolean | null>(null)
@@ -19,12 +20,11 @@ export default function QuestionShortTermSavingsHasGoals() {
   return (
     <>
       <QuestionHeader title="Do you have short term saving goals?" />
-      <Box display="flex">
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setHasSavingsGoals(true)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={isYesSelected}
-          boxProps={{ mr: 5 }}
         >
           <h3>Yup</h3>
         </BoxWithShadow>
@@ -36,7 +36,7 @@ export default function QuestionShortTermSavingsHasGoals() {
         >
           <h3>Not Really</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       {hasSavingsGoals !== null && (
         <Box mt={5}>

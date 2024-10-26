@@ -8,6 +8,7 @@ import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
 import AnimatedContainer from 'src/components/AnimatedContainer'
 import WarningAlert from 'src/components/WarningAlert'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 export default function QuestionDebtHighInterest() {
   const [hasHighInterestDebt, setHasHighInterestDebt] = useState<
@@ -25,12 +26,11 @@ export default function QuestionDebtHighInterest() {
         title="Do you have high interests debt?"
         subtitle="This is generally considered a rate of 8% or higher on any of your payments. "
       />
-      <Box display="flex">
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setHasHighInterestDebt(true)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={isYesSelected}
-          boxProps={{ mr: 5 }}
         >
           <h3>I do</h3>
         </BoxWithShadow>
@@ -42,7 +42,7 @@ export default function QuestionDebtHighInterest() {
         >
           <h3>Nope</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       {hasHighInterestDebt !== null && (
         <Box mt={5}>

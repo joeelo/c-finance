@@ -8,10 +8,9 @@ import { WizardContext } from './WizardContext'
 import { Questions } from 'src/constants/Questions'
 import BoxWithShadow from 'src/components/BoxWithShadow'
 import AnimatedContainer from 'src/components/AnimatedContainer'
-import useIsMobile from 'src/hooks/useIsMobile'
+import QuestionContainer from 'src/components/QuestionContainer'
 
 export default function QuestionHasSavings() {
-  const isMobile = useIsMobile()
   const { info, setInfo, setStep } = useContext(WizardContext)
   const [hasSavings, setHasSavings] = useState<boolean | null>(null)
 
@@ -21,16 +20,11 @@ export default function QuestionHasSavings() {
   return (
     <>
       <QuestionHeader title="Do you have a savings account?" />
-      <Box
-        display="flex"
-        flexDirection={isMobile ? 'column' : 'row'}
-        justifyContent={isMobile ? 'center' : ''}
-      >
+      <QuestionContainer>
         <BoxWithShadow
           onClick={() => setHasSavings(true)}
           boxStyle={{ cursor: 'pointer' }}
           isSelected={isYesSelected}
-          boxProps={{ mr: 5 }}
         >
           <h3>Yes</h3>
         </BoxWithShadow>
@@ -42,7 +36,7 @@ export default function QuestionHasSavings() {
         >
           <h3>Not Yet</h3>
         </BoxWithShadow>
-      </Box>
+      </QuestionContainer>
 
       {hasSavings !== null && (
         <Box mt={5}>
