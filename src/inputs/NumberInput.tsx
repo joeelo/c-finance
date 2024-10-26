@@ -10,7 +10,13 @@ const NumberInput = forwardRef(function NumberInput(
   ref,
 ) {
   return (
-    <TextField inputRef={ref} color="primary" variant="outlined" {...props} />
+    <TextField
+      slotProps={{ htmlInput: { type: 'numeric', pattern: '[0-9]*' } }}
+      inputRef={ref}
+      color="primary"
+      variant="outlined"
+      {...props}
+    />
   )
 })
 

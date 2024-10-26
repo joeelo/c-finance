@@ -9,6 +9,7 @@ import { Questions } from 'src/constants/Questions'
 import HouseSvg from 'src/images/HouseSvg'
 import BookSvg from 'src/images/BookSvg'
 import MoneyRetirementSvg from 'src/images/MoneyRetirementSvg'
+import useIsMobile from 'src/hooks/useIsMobile'
 
 enum Goals {
   House = 'house',
@@ -18,13 +19,14 @@ enum Goals {
 }
 
 export default function QuestionLongTermSavingsGoals() {
+  const isMobile = useIsMobile()
   const [goal, setGoal] = useState<Goals | null>(null)
   const { info, setInfo, setStep } = useContext(WizardContext)
 
   const boxStyles = {
     height: 250,
     width: 200,
-    marginRight: 20,
+    marginRight: isMobile ? 0 : 20,
     padding: 20,
     cursor: 'pointer',
   }

@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import { ReactNode } from 'react'
+import useIsMobile from 'src/hooks/useIsMobile'
 
 interface AnimatedContainerProps {
   children: ReactNode
@@ -8,9 +9,11 @@ interface AnimatedContainerProps {
 export default function AnimatedContainer({
   children,
 }: AnimatedContainerProps) {
+  const isMobile = useIsMobile()
+
   return (
     <Box
-      mt={5}
+      mt={isMobile ? 3 : 6}
       sx={{
         '@keyframes fadeIn': {
           '0%': {

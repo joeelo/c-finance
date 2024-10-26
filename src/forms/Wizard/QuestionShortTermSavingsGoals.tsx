@@ -9,6 +9,7 @@ import { WizardContext } from './WizardContext'
 import { Questions } from 'src/constants/Questions'
 import PalmTreeSvg from 'src/images/PalmTreeSvg'
 import MoneySvg from 'src/images/MoneySvg'
+import useIsMobile from 'src/hooks/useIsMobile'
 
 enum Goals {
   Car = 'car',
@@ -18,6 +19,7 @@ enum Goals {
 }
 
 export default function QuestionShortTermSavingsGoals() {
+  const isMobile = useIsMobile()
   const [goal, setGoal] = useState<Goals | null>(null)
   const { info, setInfo, setStep } = useContext(WizardContext)
 
@@ -27,7 +29,7 @@ export default function QuestionShortTermSavingsGoals() {
   const boxStyles = {
     height: 250,
     width: 200,
-    marginRight: 20,
+    marginRight: isMobile ? 0 : 20,
     padding: 20,
     cursor: 'pointer',
   }

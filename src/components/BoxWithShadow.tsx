@@ -26,7 +26,8 @@ export default function BoxWithShadow({
       alignItems="center"
       p={5}
       border={'1px solid rgba(0,0,0,0.1)'}
-      minHeight={100}
+      width={isMobile ? '60%' : 200}
+      minHeight={isMobile ? 50 : 100}
       mb={isMobile ? 5 : 0}
       borderRadius={4}
       mr={!isMobile ? 5 : 0}
