@@ -11,8 +11,11 @@ const NumberInput = forwardRef(function NumberInput(
 ) {
   return (
     <TextField
-      slotProps={{ htmlInput: { type: 'numeric', pattern: '[0-9]*' } }}
+      slotProps={{
+        htmlInput: { inputMode: 'numeric', type: 'number', pattern: '[0-9]*' },
+      }}
       inputRef={ref}
+      type="number"
       color="primary"
       variant="outlined"
       {...props}
