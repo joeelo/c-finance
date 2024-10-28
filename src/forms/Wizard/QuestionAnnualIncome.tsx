@@ -38,7 +38,7 @@ export default function QuestionAnnualIncome() {
 
   return (
     <>
-      <QuestionHeader title="What is your current salary?" />
+      <QuestionHeader title="What is your current salary? (After tax and bonuses)" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box display="flex" flexDirection="column" alignItems="center">
           <Controller

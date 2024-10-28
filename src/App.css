@@ -8,6 +8,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  position: relative;
 }
 
 input::-webkit-outer-spin-button,
@@ -27,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-#path2853, .palm-tree, #book-top, #money-bag, #bottom-window, #side-window, #side-window2, #down-arrow, #up-arrow, #equal {
+#path2853, .palm-tree, #book-top, #money-bag, #bottom-window, #side-window, #side-window2, #side-window3 #down-arrow, #up-arrow, #equal {
   transition: 0.25s ease all;
 }
 
